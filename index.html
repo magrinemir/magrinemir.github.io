@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cf生化模式-生化战场生存指南与实战技巧</title>
+    <meta name="description" content="本站提供穿越火线CF生化模式全方位攻略，包含生化金字塔、废墟、黑市等地图详解、生化武器评测、僵尸进化路线及团队配合技巧。">
+    <meta name="keywords" content="cf生化模式,穿越火线生化,CF生化攻略,CF生化武器,生化金字塔攻略,僵尸攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B0000; /* 暗红，象征危险 */
+            --accent-color: #FFD700; /* 金色，象征奖励 */
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/cfhero/1920/1080') no-repeat center center/cover;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #a50000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--bg-dark);
+        }
+
+        /* 内容区块通用 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* 地图推荐网格 */
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .map-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .map-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .map-img {
+            height: 180px;
+            background-color: #000;
+            position: relative;
+        }
+        
+        .map-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .map-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+
+        .map-info {
+            padding: 20px;
+        }
+
+        .map-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .map-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .map-tags span {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* 武器对比表格 */
+        .comparison-table-wrapper {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(255,255,255,0.05);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .score-cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .score-high { color: var(--accent-color); }
+        .score-med { color: #ff9800; }
+        .score-low { color: #f44336; }
+
+        /* 实用技巧列表 */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tip-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .tip-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(139, 0, 0, 0.2);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .tip-content h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .tip-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            padding-top: 15px;
+            animation: fadeIn 0.3s;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid var(--border-color);
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* 动画 */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+            .hero {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                <span>CF</span>生化模式攻略
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#maps">热门地图</a>
+                <a href="#weapons">武器评测</a>
+                <a href="#tips">生存技巧</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>CF生化模式</h1>
+                <p>掌握生存法则，成为生化战场上的最后幸存者。从武器选择到地图机制，这里有你需要的所有通关秘籍。</p>
+                <div class="hero-btns">
+                    <a href="#maps" class="btn btn-primary">查看地图攻略</a>
+                    <a href="#weapons" class="btn btn-outline">武器推荐</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门地图 Section -->
+        <section id="maps" class="container">
+            <div class="section-header">
+                <h2>热门地图解析</h2>
+                <p>熟悉地图结构是生存的第一步，了解地形优势与逃生路线。</p>
+            </div>
+            <div class="map-grid">
+                <article class="map-card">
+                    <div class="map-img">
+                        <span class="map-badge">推荐</span>
+                        <img src="https://picsum.photos/seed/cfmap1/400/250" alt="生化金字塔">
+                    </div>
+                    <div class="map-info">
+                        <h3>生化金字塔</h3>
+                        <p>经典的大型地图，拥有多层结构。推荐利用传送带进行快速移动，在顶层防守。注意躲避丧尸的滑翔抓取。</p>
+                        <div class="map-tags">
+                            <span>大型地图</span>
+                            <span>传送带</span>
+                            <span>防守型</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="map-card">
+                    <div class="map-img">
+                        <span class="map-badge">进阶</span>
+                        <img src="https://picsum.photos/seed/cfmap2/400/250" alt="生化废墟">
+                    </div>
+                    <div class="map-info">
+                        <h3>生化废墟</h3>
+                        <p>狭窄且复杂的室内外结合地图。拥有高墙和跳跃平台，适合使用高机动性武器。注意底部出口的僵尸围攻。</p>
+                        <div class="map-tags">
+                            <span>室内外</span>
+                            <span>跳跃</span>
+                            <span>突袭型</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="map-card">
+                    <div class="map-img">
+                        <span class="map-badge">经典</span>
+                        <img src="https://picsum.photos/seed/cfmap3/400/250" alt="生化集装箱">
+                    </div>
+                    <div class="map-info">
+                        <h3>生化集装箱</h3>
+                        <p>以集装箱为掩体的地图，地形开阔。需要团队配合清理集装箱后的僵尸。适合使用高射速步枪。</p>
+                        <div class="map-tags">
+                            <span>开阔</span>
+                            <span>掩体</span>
+                            <span>团队战</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 武器评测 Section -->
+        <section id="weapons" class="container">
+            <div class="section-header">
+                <h2>武器性能评测</h2>
+                <p>针对不同僵尸类型和地图环境，选择最适合的武器。</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>武器名称</th>
+                            <th>类型</th>
+                            <th>近战效果</th>
+                            <th>远程射速</th>
+                            <th>推荐场景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>雷神 (M4A1-雷神)</td>
+                            <td>步枪</td>
+                            <td class="score-cell score-high">★★★★★</td>
+                            <td class="score-cell score-high">★★★★★</td>
+                            <td>生化金字塔、集装箱</td>
+                        </tr>
+                        <tr>
+                            <td>黑骑士 (AK47-黑骑士)</td>
+                            <td>步枪</td>
+                            <td class="score-cell score-med">★★★☆☆</td>
+                            <td class="score-cell score-high">★★★★★</td>
+                            <td>废墟、突围战</td>
+                        </tr>
+                        <tr>
+                            <td>火麒麟 (M4A1-火麒麟)</td>
+                            <td>步枪</td>
+                            <td class="score-cell score-high">★★★★☆</td>
+                            <td class="score-cell score-high">★★★★☆</td>
+                            <td>通用推荐</td>
+                        </tr>
+                        <tr>
+                            <td>加特林 (加特林-金色杀手)</td>
+                            <td>机枪</td>
+                            <td class="score-cell score-low">★☆☆☆☆</td>
+                            <td class="score-cell score-high">★★★★★</td>
+                            <td>定点防守、狭窄空间</td>
+                        </tr>
+                        <tr>
+                            <td>湮灭 (AWM-湮灭)</td>
+                            <td>狙击枪</td>
+                            <td class="score-cell score-high">★★★★☆</td>
+                            <td class="score-cell score-med">★★★☆☆</td>
+                            <td>高层建筑、远距离击杀</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 实用技巧 Section -->
+        <section id="tips" class="container">
+            <div class="section-header">
+                <h2>生存与实战技巧</h2>
+                <p>不仅仅是射击，更重要的是生存智慧和团队配合。</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <div class="tip-icon">1</div>
+                    <div class="tip-content">
+                        <h4>利用地形高低差</h4>
+                        <p>在金字塔或废墟等地图中，尽量保持在高层平台。利用滑铲或跳跃机制，让普通僵尸难以抓取到你。</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">2</div>
+                    <div class="tip-content">
+                        <h4>注意僵尸进化</h4>
+                        <p>留意地图中出现的进化王或幽灵猎手。它们具有特殊技能，如瞬移或群体控制，需要队友集火优先解决。</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">3</div>
+                    <div class="tip-content">
+                        <h4>团队分工</h4>
+                        <p>一名玩家负责吸引火力，一名玩家负责清理漏网之鱼，一名玩家负责保护重武器（如加特林）的架点位置。</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">4</div>
+                    <div class="tip-content">
+                        <h4>防抓取机制</h4>
+                        <p>当僵尸即将抓取时，向侧方快速移动并按住“跳跃”键，可以打断抓取动作，这是保命的关键技巧。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+                <p>关于CF生化模式你可能遇到的疑惑。</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q: 生化模式中如何快速增加感染人数？</div>
+                    <div class="faq-answer">A: 作为人类，应尽量靠近僵尸，利用近战武器或高爆发枪械在近距离快速击杀僵尸，从而增加感染人数。作为僵尸，则应利用传送带或跳跃平台快速接近人类。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 哪种武器在生化模式中收益最高？</div>
+                    <div class="faq-answer">A: 通常情况下，拥有高射速和近战能力的步枪（如雷神、黑骑士）在生化模式中表现最为均衡。加特林适合防守，湮灭适合高台狙击。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 生化金字塔的传送带有什么技巧？</div>
+                    <div class="faq-answer">A: 传送带是移动载具，人类可以利用它快速到达地图顶层进行防守。僵尸则可以利用传送带快速接近人类，但要注意传送带上的碰撞判定。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">穿越火线官网</a></li>
+                        <li><a href="#">CF手游</a></li>
+                        <li><a href="#">游戏活动</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>攻略分类</h4>
+                    <ul>
+                        <li><a href="#">团队竞技</a></li>
+                        <li><a href="#">爆破模式</a></li>
+                        <li><a href="#">挑战模式</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CF生化模式攻略指南. 本站内容仅供学习交流使用，与腾讯游戏无关。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
