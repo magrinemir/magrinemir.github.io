@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快手网页版 - 快手官方网页版登录与在线观看指南</title>
+    <meta name="description" content="快手网页版官方入口，提供快手视频在线观看、直播回放、创作者后台管理及账号登录服务。了解如何在电脑端使用快手网页版，享受大屏观看体验。">
+    <meta name="keywords" content="快手网页版,快手官网,快手在线观看,快手直播,快手PC版">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff5000;
+            --primary-hover: #ff6b00;
+            --text-main: #000000;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --bg-body: #f5f5f5;
+            --bg-card: #ffffff;
+            --border-color: #e6e6e6;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: #f9f9f9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero-card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fff0e6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .hero-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-card);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature-icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 32px;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            max-width: 300px;
+        }
+
+        /* Login Section */
+        .login-section {
+            background-color: var(--bg-body);
+        }
+
+        .login-wrapper {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .login-info {
+            flex: 1;
+            padding: 60px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-info h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .login-info p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        .login-steps {
+            margin-top: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background-color: #fff0e6;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .login-form-container {
+            flex: 1;
+            padding: 60px;
+            background-color: #fff;
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+        }
+
+        .checkbox-group input {
+            margin-right: 8px;
+        }
+
+        .forgot-link {
+            color: var(--primary-color);
+        }
+
+        .btn-block {
+            width: 100%;
+            padding: 14px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 24px 0;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        .divider span {
+            padding: 0 12px;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .social-btn:hover {
+            background-color: #f9f9f9;
+            border-color: #ddd;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--bg-card);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: box-shadow 0.2s;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: "?";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #fff0e6;
+            color: var(--primary-color);
+            border-radius: 50%;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .login-wrapper {
+                flex-direction: column;
+            }
+            .login-info, .login-form-container {
+                padding: 40px 24px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none; /* Mobile menu would go here in full implementation */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">快手</div>
+                <span>快手网页版</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#features">功能介绍</a>
+                <a href="#login">登录入口</a>
+                <a href="#faq">帮助中心</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#login" class="btn btn-primary">立即登录</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>快手网页版<br><span>随时随地，看懂生活</span></h1>
+                <p>无需下载客户端，直接在浏览器中访问快手网页版，享受高清视频流媒体服务，关注喜爱的创作者，参与热门直播互动。</p>
+                
+                <div class="hero-cards">
+                    <article class="hero-card">
+                        <div class="hero-card-icon">📺</div>
+                        <h3>在线观看</h3>
+                        <p>海量短视频内容，涵盖搞笑、生活、科技、美食等各个领域，高清画质流畅播放。</p>
+                    </article>
+                    <article class="hero-card">
+                        <div class="hero-card-icon">🔥</div>
+                        <h3>热门直播</h3>
+                        <p>实时观看热门主播直播，与在线观众互动，参与弹幕抽奖，感受现场热烈氛围。</p>
+                    </article>
+                    <article class="hero-card">
+                        <div class="hero-card-icon">📱</div>
+                        <h3>多端同步</h3>
+                        <p>网页版与手机APP数据互通，关注列表、点赞记录、历史浏览无缝衔接。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section-padding features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>网页版核心功能</h2>
+                    <p>专为电脑端用户设计的优化体验，让浏览更加高效便捷</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🔍</div>
+                        <h3>精准推荐</h3>
+                        <p>基于浏览习惯的智能算法，为您精准推送感兴趣的内容，减少无效浏览。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🛒</div>
+                        <h3>电商购物</h3>
+                        <p>一键跳转直播间购物，浏览商品详情页，享受网页版专属优惠活动。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">⚙️</div>
+                        <h3>创作者后台</h3>
+                        <p>为创作者提供数据分析、作品管理、粉丝互动等全方位管理工具。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login" class="section-padding login-section">
+            <div class="container">
+                <div class="login-wrapper">
+                    <div class="login-info">
+                        <h2>登录快手网页版</h2>
+                        <p>使用您的手机号或账号登录，即可同步您的快手账号数据，管理您的关注列表与收藏。</p>
+                        
+                        <div class="login-steps">
+                            <div class="step">
+                                <div class="step-num">1</div>
+                                <div class="step-content">
+                                    <h4>输入账号</h4>
+                                    <p>支持手机号、邮箱或快手账号登录</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">2</div>
+                                <div class="step-content">
+                                    <h4>安全验证</h4>
+                                    <p>系统将发送验证码至您的绑定手机</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">3</div>
+                                <div class="step-content">
+                                    <h4>开始浏览</h4>
+                                    <p>验证通过后即可享受完整服务</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-form-container">
+                        <h3 class="form-title">账号登录</h3>
+                        <form onsubmit="event.preventDefault(); alert('演示页面：登录功能需连接实际后端接口。');">
+                            <div class="form-group">
+                                <label class="form-label" for="phone">手机号 / 邮箱</label>
+                                <input type="text" id="phone" class="form-input" placeholder="请输入您的账号" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="password">密码</label>
+                                <input type="password" id="password" class="form-input" placeholder="请输入密码" required>
+                            </div>
+                            <div class="form-options">
+                                <label class="checkbox-group">
+                                    <input type="checkbox"> 记住我
+                                </label>
+                                <a href="#" class="forgot-link">忘记密码？</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">登录</button>
+                        </form>
+
+                        <div class="divider">
+                            <span>或使用第三方账号登录</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="social-btn">微信</button>
+                            <button type="button" class="social-btn">QQ</button>
+                            <button type="button" class="social-btn">微博</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于快手网页版使用的一些常见疑问</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question">网页版与手机APP有什么区别？</h3>
+                        <p class="faq-answer">网页版主要提供内容浏览、观看直播和基础互动功能，数据与手机APP同步。手机APP则包含更多创作工具、离线下载和完整的社区互动功能。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">如何注册快手网页版账号？</h3>
+                        <p class="faq-answer">您可以直接在登录页点击注册，或者使用手机号通过短信验证码完成注册。注册后即可登录网页版。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">网页版支持哪些浏览器？</h3>
+                        <p class="faq-answer">推荐使用 Chrome、Edge、Firefox 等现代主流浏览器，以确保视频播放流畅和页面交互正常。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">观看直播需要付费吗？</h3>
+                        <p class="faq-answer">大部分直播内容免费观看。部分主播可能会开启付费直播或付费礼物功能，用户需自行选择是否参与。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>快手网页版</h3>
+                    <p>快手官方提供的网页端服务，致力于为用户提供便捷、丰富的短视频和直播内容体验，连接每一个热爱生活的你。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">官方论坛</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2024 快手网页版. All rights reserved.</p>
+                <p>本页面为设计演示，非快手官方真实入口。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
