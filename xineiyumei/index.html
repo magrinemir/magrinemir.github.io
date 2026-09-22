@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西内裕美 - 官方粉丝资讯与影视作品档案</title>
+    <meta name="description" content="西内裕美官方网站，收录西内裕美个人资料、演艺经历、影视作品及最新动态。提供关于西内裕美的深度介绍与粉丝社区相关信息。">
+    <meta name="keywords" content="西内裕美, 日本演员, 女演员, 影视作品, 个人简介">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c9a96e;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/yumi/1920/1080.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #b08d55;
+            transform: translateY(-2px);
+        }
+
+        /* Bio Section */
+        .bio-section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .bio-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .bio-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .bio-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .bio-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        /* Works Section */
+        .works-section {
+            background-color: white;
+            padding: 5rem 0;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--bg-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .work-thumb {
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .work-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-thumb img {
+            transform: scale(1.05);
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-year {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .work-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .work-role {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* News Section */
+        .news-section {
+            padding: 5rem 0;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .news-item {
+            display: flex;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            align-items: center;
+        }
+
+        .news-date {
+            min-width: 120px;
+            text-align: center;
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-right: 1.5rem;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .news-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #999;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .bio-grid { grid-template-columns: 1fr; }
+            .bio-image { max-width: 400px; margin: 0 auto; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
+            nav ul { margin-top: 1rem; gap: 1rem; }
+            .news-item { flex-direction: column; text-align: center; }
+            .news-date { margin-right: 0; margin-bottom: 1rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">YUMI<span>NISHI</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#profile">个人档案</a></li>
+                    <li><a href="#works">影视作品</a></li>
+                    <li><a href="#news">最新动态</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>西内裕美</h1>
+                <p>日本知名女演员、模特，以其独特的演技风格和时尚表现力活跃于影视及时尚界。</p>
+                <a href="#works" class="btn">浏览作品集</a>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="bio-section container">
+            <h2 class="section-title">个人档案</h2>
+            <div class="bio-grid">
+                <div class="bio-image">
+                    <img src="https://picsum.photos/seed/yumi_portrait/600/800.jpg" alt="西内裕美写真">
+                </div>
+                <div class="bio-text">
+                    <h2>关于西内裕美</h2>
+                    <p>西内裕美（Yumi Nishiuchi），日本演员、模特。出生于日本埼玉县。2005年作为模特出道，凭借清纯的外表和自然的表演风格逐渐在演艺圈崭露头角。</p>
+                    <p>她不仅在时尚杂志中频繁亮相，还活跃于电视剧和电影领域。其代表作品涵盖了多种题材，展现了作为演员的可塑性和专业素养。西内裕美以其独特的个人魅力和对角色的深入理解，赢得了观众的喜爱。</p>
+                    <p>除了演艺事业，她也在积极拓展个人品牌，参与各类时尚活动，是日本年轻一代艺人中具有代表性的面孔之一。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <h2 class="section-title">代表影视作品</h2>
+                <div class="works-grid">
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/movie1/400/600.jpg" alt="电影海报">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-year">2016</span>
+                            <h3 class="work-title">电影《某日，某处》</h3>
+                            <p class="work-role">饰演 松田千惠</p>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/drama1/400/600.jpg" alt="电视剧剧照">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-year">2014</span>
+                            <h3 class="work-title">电视剧《问题餐厅》</h3>
+                            <p class="work-role">饰演 香川爱里香</p>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/movie2/400/600.jpg" alt="电影海报">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-year">2012</span>
+                            <h3 class="work-title">电影《为了N》</h3>
+                            <p class="work-role">饰演 岸本夏美</p>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/drama2/400/600.jpg" alt="电视剧剧照">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-year">2011</span>
+                            <h3 class="work-title">电视剧《Mother》</h3>
+                            <p class="work-role">饰演 中野由加里</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news-section container">
+            <h2 class="section-title">最新动态</h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">15</span>
+                        <span class="month">Oct</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>参与时尚杂志最新一期拍摄</h3>
+                        <p>西内裕美近日受邀为知名时尚杂志拍摄了最新一期封面及内页大片，展现了秋季的时尚穿搭风格。</p>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">02</span>
+                        <span class="month">Sep</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>主演电影入围东京国际电影节</h3>
+                        <p>由西内裕美主演的新片《光影之间》已确认入围东京国际电影节“亚洲未来”单元，并将于近日展映。</p>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">20</span>
+                        <span class="month">Aug</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>社交媒体更新：秋季新歌发布</h3>
+                        <p>西内裕美在个人社交媒体上发布了个人单曲的试听片段，为即将到来的专辑预热。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #666; margin-bottom: 1rem;">
+                        本站旨在为粉丝提供关于西内裕美的最新资讯、作品回顾及个人资料整理。我们尊重版权，所有内容仅供学习交流使用。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">个人简介</a></li>
+                        <li><a href="#">影视作品</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">粉丝社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 西内裕美粉丝资讯站. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
