@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冒险岛sf海 - 专业冒险岛私服海岛服务器资源分享站，提供海岛版、全职业、双开等特色服务器的下载、攻略及最新开服信息。">
+    <meta name="keywords" content="冒险岛sf海,冒险岛私服,冒险岛海岛版,冒险岛下载,冒险岛攻略">
+    <title>冒险岛sf海 - 特色私服资源与海岛版本下载指南</title>
+    <style>
+        :root {
+            --primary-color: #5b8cff;
+            --secondary-color: #ff9d00;
+            --bg-color: #1a1a2e;
+            --card-bg: #16213e;
+            --text-main: #ffffff;
+            --text-sub: #a0a0b0;
+            --border-radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(22, 33, 62, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(91, 140, 255, 0.15) 0%, transparent 40%),
+                              radial-gradient(circle at 80% 70%, rgba(255, 157, 0, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-color), #3b6ecc);
+            color: white;
+            box-shadow: 0 4px 15px rgba(91, 140, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background: var(--bg-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Server List */
+        .server-section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .server-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .server-img {
+            height: 180px;
+            background-color: #2a2a4a;
+            position: relative;
+        }
+
+        .server-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .server-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .server-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .server-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .server-status {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .status-online { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+        .status-offline { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        .status-test { background: rgba(241, 196, 15, 0.2); color: #f1c40f; }
+
+        .server-info {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .server-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .server-desc {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .server-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 14px;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: #16213e;
+            padding: 80px 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .guide-content p {
+            color: var(--text-sub);
+            margin-bottom: 30px;
+        }
+
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .step-num {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .step-text p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin: 0;
+        }
+
+        .guide-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1526;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-sub);
+            margin-top: 15px;
+            font-size: 14px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .server-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span style="font-size: 30px;">🏝️</span> 冒险岛sf海
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">服务器列表</a></li>
+                <li><a href="#">新手入门</a></li>
+                <li><a href="#">职业攻略</a></li>
+                <li><a href="#">社区论坛</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索服务器...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>重温经典 <span>冒险岛sf海</span>，探索全新冒险</h1>
+            <p>汇集全网最稳定、最具特色的冒险岛海岛版本私服。双开、全职业、高爆率，带你回到无忧无虑的玛加迪亚时光。</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">立即浏览服务器</button>
+                <button class="btn btn-secondary">查看最新开服表</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🎮</span>
+                <h3>经典复刻</h3>
+                <p>完美还原冒险岛经典玩法与地图场景，让你一秒穿越回童年。</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>极速体验</h3>
+                <p>优化服务器性能，低延迟、高并发，告别卡顿，畅快练级。</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💎</span>
+                <h3>特色福利</h3>
+                <p>提供多种福利活动，每日签到、在线奖励，助力新手快速成长。</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🛡️</span>
+                <h3>安全稳定</h3>
+                <p>数据每日备份，防封号机制完善，保障您的账号与财产安全。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="server-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>精选服务器推荐</h2>
+                    <p>根据人气、稳定性和特色为您筛选的最佳海岛私服</p>
+                </div>
+                <div class="filter-tags">
+                    <button class="btn btn-sm btn-secondary">全部</button>
+                    <button class="btn btn-sm btn-secondary">双开</button>
+                    <button class="btn btn-sm btn-secondary">复古</button>
+                </div>
+            </div>
+
+            <div class="server-grid">
+                <!-- Server 1 -->
+                <article class="server-card">
+                    <div class="server-img">
+                        <img src="https://picsum.photos/seed/maple1/400/250" alt="海岛版私服">
+                        <span class="server-tag">热门推荐</span>
+                    </div>
+                    <div class="server-content">
+                        <div class="server-title">
+                            玛加迪亚传说
+                            <span class="server-status status-online">运营中</span>
+                        </div>
+                        <div class="server-info">
+                            <span>👥 2,304 人在线</span>
+                            <span>📅 开服 128 天</span>
+                            <span>🎯 类型: 海岛版</span>
+                        </div>
+                        <p class="server-desc">全职业开放，双开无限制。拥有独特的海岛地图探索系统，奖励丰厚，适合老玩家回归。</p>
+                        <div class="server-actions">
+                            <button class="btn btn-sm btn-primary">立即下载</button>
+                            <button class="btn btn-sm btn-secondary">进入官网</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Server 2 -->
+                <article class="server-card">
+                    <div class="server-img">
+                        <img src="https://picsum.photos/seed/maple2/400/250" alt="复古私服">
+                        <span class="server-tag">高爆率</span>
+                    </div>
+                    <div class="server-content">
+                        <div class="server-title">
+                            龙之谷怀旧服
+                            <span class="server-status status-test">封测中</span>
+                        </div>
+                        <div class="server-info">
+                            <span>👥 850 人在线</span>
+                            <span>📅 开服 15 天</span>
+                            <span>🎯 类型: 复古</span>
+                        </div>
+                        <p class="server-desc">主打复古情怀，还原早期冒险岛版本。高爆率设计，让你轻松获得极品装备。</p>
+                        <div class="server-actions">
+                            <button class="btn btn-sm btn-primary">立即下载</button>
+                            <button class="btn btn-sm btn-secondary">进入官网</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Server 3 -->
+                <article class="server-card">
+                    <div class="server-img">
+                        <img src="https://picsum.photos/seed/maple3/400/250" alt="双开私服">
+                        <span class="server-tag">双开首选</span>
+                    </div>
+                    <div class="server-content">
+                        <div class="server-title">
+                            星空冒险岛
+                            <span class="server-status status-online">运营中</span>
+                        </div>
+                        <div class="server-info">
+                            <span>👥 1,120 人在线</span>
+                            <span>📅 开服 45 天</span>
+                            <span>🎯 类型: 双开</span>
+                        </div>
+                        <p class="server-desc">专为多开党打造，支持多角色同时在线。技能特效华丽，画面优化极佳。</p>
+                        <div class="server-actions">
+                            <button class="btn btn-sm btn-primary">立即下载</button>
+                            <button class="btn btn-sm btn-secondary">进入官网</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section">
+        <div class="container guide-grid">
+            <div class="guide-content">
+                <h2>新手入门指南</h2>
+                <p>刚接触冒险岛私服？不知道如何选择服务器或开始游戏？请遵循以下简单步骤，快速开启您的冒险之旅。</p>
+                <div class="guide-steps">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-text">
+                            <h4>选择合适的服务器</h4>
+                            <p>根据您的需求，选择“双开”或“复古”版本。新手建议选择福利好、玩家多的“海岛版”。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-text">
+                            <h4>下载客户端</h4>
+                            <p>点击服务器详情页的“立即下载”按钮，获取官方客户端安装包，安装包内包含游戏资源。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-text">
+                            <h4>创建角色与登录</h4>
+                            <p>运行客户端，输入账号密码登录。在角色创建界面选择您喜欢的职业，即可开始冒险。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="guide-image">
+                <img src="https://picsum.photos/seed/gameplay/600/400" alt="冒险岛游戏画面">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">🏝️ 冒险岛sf海</div>
+                <p>专注提供最优质的冒险岛私服资源与攻略分享，致力于还原最纯粹的冒险体验。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">服务器列表</a></li>
+                    <li><a href="#">下载中心</a></li>
+                    <li><a href="#">新手教程</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>特色服务</h4>
+                <ul>
+                    <li><a href="#">海岛版本</a></li>
+                    <li><a href="#">双开私服</a></li>
+                    <li><a href="#">复古怀旧</a></li>
+                    <li><a href="#">高爆率服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">站长联系</a></li>
+                    <li><a href="#">提交服务器</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li>合作QQ: 12345678</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2023 冒险岛sf海. All Rights Reserved. 本站资源仅供个人学习交流使用，请于下载后24小时内删除。</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
