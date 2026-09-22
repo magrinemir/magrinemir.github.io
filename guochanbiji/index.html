@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国产笔记本品牌-国产主流品牌推荐与选购指南</title>
+    <meta name="description" content="本站提供国产笔记本品牌的全面评测与选购指南，涵盖华为、联想、小米、荣耀、机械革命等热门品牌的笔记本电脑型号对比、性能分析及最新资讯。">
+    <meta name="keywords" content="国产笔记本品牌,华为笔记本,联想笔记本,小米笔记本,荣耀笔记本,国产电脑推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-hover: #0052a3;
+            --secondary-color: #f5f7fa;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            margin-left: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            outline: none;
+            width: 200px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            width: 240px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #f0f7ff;
+        }
+
+        /* Brand Grid Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .brand-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--card-shadow);
+            transform: translateY(-3px);
+        }
+
+        .brand-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .brand-name {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        /* Product Showcase */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--card-shadow);
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 60px;
+            position: relative;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff4d4f;
+            color: white;
+            padding: 2px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-brand {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .spec-tag {
+            background-color: var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .product-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ff4d4f;
+        }
+
+        .price small {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background-color: var(--secondary-color);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            width: 20%;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background-color: #fafafa;
+        }
+
+        .check-icon {
+            color: #52c41a;
+            font-weight: bold;
+        }
+
+        .cross-icon {
+            color: #ff4d4f;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .comparison-table th, .comparison-table td {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">国产品牌<span>笔记本</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#brands" class="active">品牌专区</a></li>
+                    <li><a href="#products">热门型号</a></li>
+                    <li><a href="#comparison">参数对比</a></li>
+                    <li><a href="#faq">选购指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索型号...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>国产笔记本品牌全方位评测与推荐</h1>
+            <p>深入解析华为、联想、小米、荣耀等主流国产品牌的最新产品线，为您提供从性能参数到实际使用体验的详细参考，助您做出明智选择。</p>
+            <div class="cta-group">
+                <a href="#brands" class="btn btn-primary">浏览品牌</a>
+                <a href="#comparison" class="btn btn-outline">查看对比</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Section -->
+    <section id="brands" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">主流国产笔记本品牌</h2>
+                <a href="#" class="view-all">查看所有品牌 &rarr;</a>
+            </div>
+            <div class="brand-grid">
+                <div class="brand-card">
+                    <div class="brand-icon">H</div>
+                    <div class="brand-name">华为 (HUAWEI)</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">L</div>
+                    <div class="brand-name">联想 (Lenovo)</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">X</div>
+                    <div class="brand-name">小米 (Xiaomi)</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">M</div>
+                    <div class="brand-name">荣耀 (Honor)</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">V</div>
+                    <div class="brand-name">机械革命</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">Z</div>
+                    <div class="brand-name">微星 (MSI)</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">G</div>
+                    <div class="brand-name">神舟</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">H</div>
+                    <div class="brand-name">惠普 (HP)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门机型推荐</h2>
+                <a href="#" class="view-all">查看更多型号 &rarr;</a>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="badge">热销</span>
+                        🖥️
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">华为</div>
+                        <h3 class="product-title">MateBook D14 2024款</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">酷睿Ultra 5</span>
+                            <span class="spec-tag">14英寸</span>
+                            <span class="spec-tag">2.8K</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">¥4999<small>起</small></div>
+                            <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 14px;">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="badge">轻薄</span>
+                        📱
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">联想</div>
+                        <h3 class="product-title">ThinkBook 14+ 2024</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">锐龙7 8845H</span>
+                            <span class="spec-tag">14英寸</span>
+                            <span class="spec-tag">独显版</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">¥5499<small>起</small></div>
+                            <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 14px;">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="badge">性价比</span>
+                        ⚡
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">小米</div>
+                        <h3 class="product-title">Redmi Book Pro 14 2024</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">酷睿Ultra 7</span>
+                            <span class="spec-tag">2.8K</span>
+                            <span class="spec-tag">120Hz</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">¥5299<small>起</small></div>
+                            <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 14px;">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="badge">游戏</span>
+                        🎮
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">机械革命</div>
+                        <h3 class="product-title">Code 01 轻薄游戏本</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">RTX 4060</span>
+                            <span class="spec-tag">16英寸</span>
+                            <span class="spec-tag">165Hz</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">¥5999<small>起</small></div>
+                            <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 14px;">详情</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="section comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">品牌核心参数对比</h2>
+                <a href="#" class="view-all">查看完整表格 &rarr;</a>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>对比维度</th>
+                        <th>华为 MateBook</th>
+                        <th>联想 ThinkBook</th>
+                        <th>小米 Redmi Book</th>
+                        <th>荣耀 MagicBook</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>主要优势</td>
+                        <td>多屏协同、PC级应用引擎、生态互联</td>
+                        <td>商务属性强、接口丰富、扩展性好</td>
+                        <td>屏幕素质高、性价比突出、MIUI for Pad体验</td>
+                        <td>轻薄便携、护眼屏、多设备互联</td>
+                    </tr>
+                    <tr>
+                        <td>目标人群</td>
+                        <td>商务办公、移动办公人群、华为手机用户</td>
+                        <td>学生党、职场新人、需要扩展接口的用户</td>
+                        <td>预算有限的学生、追求高性价比的用户</td>
+                        <td>轻度办公、追求便携与颜值的用户</td>
+                    </tr>
+                    <tr>
+                        <td>屏幕表现</td>
+                        <td>多为3:2比例，护眼认证</td>
+                        <td>主流16:10比例，高色域</td>
+                        <td>高亮度、高刷新率，观感细腻</td>
+                        <td>莱茵护眼认证，低蓝光</td>
+                    </tr>
+                    <tr>
+                        <td>售后支持</td>
+                        <td><span class="check-icon">✓</span> 全国联保，上门服务</td>
+                        <td><span class="check-icon">✓</span> 4S店网点覆盖广</td>
+                        <td><span class="check-icon">✓</span> 官方直营，售后完善</td>
+                        <td><span class="check-icon">✓</span> 快速响应，上门服务</td>
+                    </tr>
+                    <tr>
+                        <td>适合场景</td>
+                        <td>移动办公、文档处理、多屏协作</td>
+                        <td>综合办公、编程开发、轻度设计</td>
+                        <td>日常学习、影音娱乐、日常办公</td>
+                        <td>通勤携带、文档处理、日常娱乐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">国产笔记本和进口品牌相比，主要差距在哪里？</div>
+                    <div class="faq-answer">
+                        目前国产主流品牌（如华为、联想、小米）在核心硬件（CPU、内存、硬盘）上与进口品牌没有本质区别，均采用Intel和AMD的最新处理器。差距主要体现在品牌溢价、做工细节、屏幕素质以及部分软件生态体验上。对于大多数办公和日常娱乐用户，国产笔记本已经完全够用，性价比更高。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">购买国产笔记本需要注意什么？</div>
+                    <div class="faq-answer">
+                        建议优先关注屏幕素质（色域、亮度、刷新率）、内存和硬盘的配置（建议16GB内存起步）、电池续航能力以及售后服务的便利性。如果是游戏本，还需关注散热设计和显卡性能释放。此外，确认品牌官方渠道的保修政策也很重要。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">华为、荣耀和小米笔记本有什么区别？</div>
+                    <div class="faq-answer">
+                        这三个品牌在硬件架构上差异不大，主要区别在于软件生态和产品设计理念。华为和荣耀主打“多屏协同”，适合拥有同品牌手机的用户；小米则主打“极致性价比”和高素质屏幕。联想作为老牌大厂，产品线最全，覆盖从入门到高端商务的全场景。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">游戏本一定要买大品牌吗？</div>
+                    <div class="faq-answer">
+                        不一定。对于预算有限的用户，像机械革命、神舟、雷神等主打性价比的品牌是不错的选择，它们通常能提供同价位下更高的硬件配置（如RTX 4060）。但需要注意的是，这些品牌在品控和售后网点覆盖上可能不如一线大厂，购买时需仔细甄别。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <p style="color: #999; font-size: 14px;">本站致力于为用户提供最客观、最及时的国产笔记本品牌资讯与选购建议，帮助每一位用户找到最适合的笔记本电脑。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>热门品牌</h3>
+                    <ul>
+                        <li><a href="#">华为笔记本</a></li>
+                        <li><a href="#">联想 ThinkPad</a></li>
+                        <li><a href="#">小米笔记本</a></li>
+                        <li><a href="#">荣耀 MagicBook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>选购指南</h3>
+                    <ul>
+                        <li><a href="#">轻薄本推荐</a></li>
+                        <li><a href="#">游戏本选购</a></li>
+                        <li><a href="#">商务本评测</a></li>
+                        <li><a href="#">参数解读</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系方式</h3>
+                    <ul>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">投稿建议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 国产品牌笔记本推荐网. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                      </html>
